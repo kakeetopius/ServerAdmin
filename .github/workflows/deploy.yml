@@ -26,4 +26,5 @@ jobs:
           rsync -az --delete \
             -e "ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=accept-new" \
             --exclude='.git' \
+            --port "$SERVER_PORT"
             ./ "$SERVER_USER@$SERVER_HOST:/var/www/serveradmin/"
