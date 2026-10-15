@@ -25,6 +25,6 @@ jobs:
           chmod 600 ~/.ssh/id_ed25519
 
           rsync -az --delete \
-            -e "ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=accept-new" \
+            -e "ssh -i ~/.ssh/id_ed25519 -p $SERVER_PORT -o StrictHostKeyChecking=accept-new" \
             --exclude='.git' \
             ./ "$SERVER_USER@$SERVER_HOST:/var/www/serveradmin/"
